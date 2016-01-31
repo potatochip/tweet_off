@@ -1,6 +1,8 @@
 '''
 winning
 '''
+#TODO: move data into pickled set? more efficient and faster but then cant just edit in a text browser
+#TODO: allow updating of content.csv files from browser. flask-admin app?
 
 from keys import keys
 import tweepy
