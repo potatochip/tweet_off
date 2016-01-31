@@ -43,9 +43,9 @@ class StreamListener(tweepy.streaming.StreamListener):
                     save_text(text)
                 print
         except:
-            with open('error_log.txt', 'a') as file:
-                file.write(data)
-                pass
+            pass
+            # with open('error_log.txt', 'a') as file:
+            #     file.write(data)
 
 
 def save_text(text):
@@ -55,13 +55,13 @@ def save_text(text):
 
 def check_blacklist_text(text):
     blacklist = ['thinkbigsundaywithmarsha', '#career #opportunity', '#job #opportunity']
-    if any(i in text for i in blacklist):
+    if any(i in text.lower() for i in blacklist):
         return True
 
 
 def check_blacklist_user(user):
     blacklist = ['1shopforless']
-    if user in blacklist:
+    if user.lower() in blacklist:
         return True
 
 

@@ -77,7 +77,6 @@ def fit_length(msg, link):
         message = msg[:-overrun-3] + '...' + content_end
         return message
     else:
-        extra = max_length - len(message)
         for i in reversed(range(2, 4)):
             new_message = msg + get_hashtags(i) + link
             if len(new_message) < max_length:
