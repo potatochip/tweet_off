@@ -1,0 +1,669 @@
+In a letter to T.S. Elliot, Keynes commented that the trouble with designing policies for
+full employment is that economists lacked both the intellectual conviction of their
+feasibility and the cleverness to design them. Goodness and well-meaning intentions were
+never the problem. It seems today, similarly, we are more in need of intellectual
+conviction and cleverness to design such policies than ever before in the postwar era. The
+mainstream has abandoned the notion of full employment believing that some
+noninflationary level of unemployment is the most we can hope for. Fiscal policy is
+relegated to the dustbins of history with a possible minor role in severe contemporary
+recessions. Governments are considered to be generally wasteful and inefficient, thus,
+whatever solution markets deliver with respect to employment must be the optimum
+result. The resurrection of Abba Lerner’s Functional Finance approach by Post
+Keynesians (Forstater 1999; Bell 1999; Arestis and Sawyer 2004) attempts to reverse this
+tide of pessimism and convey the importance of fiscal policy and its link to full
+employment once again. This is certainly a well-meaning endeavor.
+The mainstream approach to unemployment is also driven by good intentions. The
+solution is to provide incentives for accelerated investment and growth (giving tax breaks
+and cutting interest rates) and to pump enough aggregate demand via tax cuts,
+unemployment insurance, or some other form of spending. The problem of
+unemployment is addressed by pushing the economy onto some new growth path, while
+preventing those who are left behind from drowning via income transfers. These are the
+contemporary aggregate demand policies. And while they are not policies that lack good
+3
+intentions, Keynes would argue today that they are neither clever, nor driven by the
+steadfast intellectual conviction that full employment is a real possibility.
+So it is constructive to revisit Keynes’s view of employment policy once again to
+see what role aggregate demand policies played in his analytical approach. Much has
+been written on what Keynes meant or did not mean and what he would have made of
+contemporary policies carried in his name. Although there is much disagreement on his
+theoretical contributions, there is a general agreement across the theoretical spectrum that
+boosting aggregate demand is the Keynesian solution for full employment.1
+ This paper
+argues against this view and suggests that while aggregate demand has an important place
+in Keynes’s analysis of the business cycle, “filling the gap” is not his method for fiscal
+policy. Rather, he had a targeted demand approach to full employment of a specific kind.
+He favored public employment schemes, generally in the form of public works, which
+were to be implemented both in recessions and in economies near full employment. To
+subscribe to such a plan, however, requires conviction of its advantages and cleverness in
+its execution. Keynes had both.
+Because Keynes’s theory is mistakenly referred to as “depression economics,”
+public works are generally viewed as “depression solutions.” General fiscal policy that
+fills the demand gap between actual and potential output dominates theory and policy.
+“Closing the gap,” it will be argued here, is a backward way of thinking about full
+employment policy and is not the essence of the Keynesian contribution.
+What was truly innovative in Keynes’s work was the principle of effective
+demand, which is quite distinct from what has become known as the theory of aggregate
+demand (Kregel 2008). Once we make this distinction, it becomes clear why Keynes did
+not speak of “fiscal policy” in general, but he spoke of public works (see also Marcuzzo
+[2006] and Chick [1983: 318]). Furthermore, for Keynes, the key measure of the
+desirability of public policies was their net employment-generation effect. Targeting
+demand via public works would be done irrespective of the stage of the business cycle;
+whether this targeting meant more public works or better distributed public works
+depended on the level of economic activity. This distinction is important in evaluating
+fiscal policy. Today’s aggregate demand approach to full employment is not Keynes’s
+
+1
+ Recall that full employment for the mainstream is not the same thing as full employment for Keynes.
+4
+solution. In addition, it is important to note that the Keynesian method is one of
+unemployment targeting, which is also distinct from what is known as industry targeting.
+The first question to ask is what role did output gap analysis have in Keynes’s
+method. The standard textbook Keynesian model shows how fiscal stimuli close the gap
+between full employment output and current output. This could be done via increasing
+government spending, cutting taxes, or balancing the budget—policies that work through
+different multiplier effects. While rejecting the Keynesian analysis, the New Economic
+Consensus model and much of mainstream theory still use the gap method to argue in
+support of monetary or fiscal policy by stipulating various demand- or supply-side effects
+of each.2
+ While the policy recommendations across the theoretical spectrum diverge
+significantly, plugging the gap is a core economic concept that underpins them. This
+methodology is also embraced by many Post Keynesians.
+It is easy to see how Keynes’s own writings have encouraged such an
+interpretation. Keynes, after all, emphasized that his was a theory of aggregates and that
+he set out to explain the determination of output and employment as a whole. Largely
+overlooked is the fact that he also had a clear theory of pricing, which provided the micro
+foundations of his macro theory.3
+ He first stressed that an exogenous (or quasiindependent)
+marginal propensity to consume of less than one left a gap between
+consumption and income, meaning that firms’ outlays on wages did not return back to
+them in the form of revenue from consumption. The withdrawal of purchasing power
+from saving undermined full employment and could be plugged by investment spending
+only under certain very special circumstances in a manner similar to that in classical
+theory (Keynes 1964 [1936]: 9). In general, however, Keynes argued that investment did
+not normally manage to do so, leaving the economy to operate below full employment.
+As he pointed out, “the evidence indicates that full, or even approximately full,
+employment is a rare and short-lived occurrence” (Keynes 1964 [1936]: 250). So he set
+out to understand the forces behind investment, which made it chronically ineffective in
+attaining or maintaining full employment. After spelling out these forces, he concluded
+
+2
+ Recall, for example, that the Taylor rule targets both the output and inflationary gaps (Taylor 1993). Other
+modern output gap methods come from some variation of Okun’s law (more below).
+3
+ Keynes stressed output and employment determination as a whole in the General Theory because he did
+not do so in his analysis in the Treatise.
+5
+that it was the job of public policy to “establish a closer approximation of full
+employment as nearly as is practicable” (Keynes 1964 [1936]: 378–79).
+This conclusion has largely been interpreted to mean that if the demand gap is not
+filled by investment spending it can be filled by government spending, but the type of
+fiscal policy that could do the job is left to interpretation. The key is to increase money
+expenditures sufficiently to produce full employment. Keynes, however, did not endorse
+just any fiscal policy and he specifically objected to those that aimed to stabilize
+consumption as policies for full employment. This would rule out contemporary
+unemployment insurance, which he did not believe would solve the unemployment
+problem; it would also exclude modern tax rebates, various consumption subsidies, and
+other transfer payments. For example, in correspondence with James Meade (who argued
+in favor of cutting taxes “before unemployment develops” as Britain exited a full
+employment war-time economy), Keynes objected that he was not too happy about the
+line of argument Meade set forth… “I doubt it is wise to put too much stress on devices
+for causing the volume of consumption to fluctuate in preference to devices for varying
+the volume of investment’ (Keynes 1980: 318–319). And again, “I doubt if much is to be
+hoped from proposals to offset unforeseen short-period fluctuations in investment by
+stimulating short-period changes in consumption” (Keynes 1980: 323). Keynes’s
+objections would also rule out Post Keynesian proposals of a social dividend (as in
+Robinson [1949]),4
+ and basic income guarantees (as in King [2001] and Sawyer [2005]).
+Keynes wanted to stabilize investment, but he also did not believe that stabilizing
+private investment could do the job. Boosting aggregate demand to encourage private
+investment had serious limitations, which were well understood by his contemporaries
+(see, for example, Kaldor [1938] and Kalecki [1945]), limitations which could easily be
+overcome by public investment.
+To understand his approach to policy we need to examine: 1) how effective
+demand differs from aggregate demand; 2) why fixing the point of effective demand at
+full employment is not possible; 3) how a policy of public works circumvents this
+
+4
+ “If there is unemployment on the one hand and unsatisfied needs on the other, why should not the two be
+brought together, by the simple device of providing the needy with purchasing power to consume to
+products of the unemployed” (Robinson 1949: 73). Note that for Joan Robinson, “public works can serve as
+a counterweight to the fluctuations in investment undertaken by profit seeking entrepreneurs” (Robinson
+1949: 30), but for Keynes they were also a policy for employing the unemployed at the margin.
+6
+problem, irrespective of the stages in the business cycle; and 4) what role the method of
+“plugging the gap” plays in Keynes’s analysis. All of this has to be studied in the context
+of Keynes’s steadfast intellectual conviction that the “real problem, fundamental yet
+essentially simple…[is] to provide employment for everyone” (Keynes 1980: 267). Full
+employment is an objective in recessions and in expansions, as well as in the long run. In
+response to Sir Eady, who reflected that Keynes’s note on the Maintenance of Full
+Employment in the long run via public works was, for most British Ministers, a “voyage
+to the stratosphere,” Keynes replied that they should better “become accustomed to the
+stratosphere—if that is really what it is! ….as there is scarcely an undergraduate of the
+modern generation for whom these truths [the means of securing long-term full
+employment] are hidden” (Keynes 1980: 325). It seems that Keynes’s contemporaries
+lacked not just conviction and cleverness, but also a very basic grasp of his proposal.
+II. EFFECTIVE DEMAND IS NOT AGGREGATE DEMAND
+It is important to remind the reader that Keynes’s theory of effective demand is not the
+same as the theory of aggregate demand. The theory of effective demand is a theory
+about the factors that determine investment in a monetary production economy, while the
+theory of aggregate demand is a theory of boosting the various components of current
+expenditure (private or public) to secure some numerical measure of potential output. It
+must also be pointed out that what Keynes called the aggregate demand curve (the D
+curve) is not a curve of the current money expenditures as a function of current prices
+(i.e., the GDP curve in contemporary economic models). Rather, it is a curve of the
+expected future expenditures (or proceeds), which will validate the entrepreneurs’
+decision to produce and employ N number of people today. Increasing current
+expenditures may or may not improve those expectations, which means that pumping
+aggregate demand today is not guaranteed to improve the conditions that underpin the
+point of effective demand. Keynes, of course, compellingly argued that in slumps it
+generally would, but from 1937 on he just as compellingly argued that near full capacity
+increasing aggregate demand would not produce full employment. At the time, he
+7
+warned, “we are in more need today of a rightly distributed demand than of a greater
+aggregate demand” (Skidelsky 2001: 21; see also Kregel [2008]).
+Unemployment for Keynes, in all cases (regardless of the phase in the business
+cycle), was a result of deficient effective demand, not deficient aggregate demand. But
+because there is only one point of effective demand consistent with full employment, to
+pin it down is no easy task. As already explained, this point is given by the cross-section
+of the current supply price of output and the future demand price of output. In the short
+run, there is no swift way of reducing the supply price of output (i.e., the cost of
+production) other than by lowering wages, which would be counterproductive. This is
+because bidding down wages makes sure that the extra output will not be sold, even if it
+can be produced at a lower cost (Kregel 1987). In other words, lowering wages is likely
+to reduce total employment. For these reasons, and in rejection of Say’s law, he argued
+that one must work on the demand side. To do this, policy can attempt to influence the
+independent factors that determine the level of employment—the marginal propensity to
+consume (MPC), the marginal efficiency of money (MEM), or the marginal efficiency of
+capital (MEC).
+When total demand is deficient, policies can attempt to boost either private or
+public investment. Private investment can be encouraged by reducing the interest rate
+(i.e., the MEM), which, given the state of expectations, will reduce the cost of finance.
+Alternatively, one may attempt to change the MPC via income redistribution schemes
+towards those individuals with high propensities to consume and away from those who
+have high propensities to save. Finally, another way of moving the point of effective
+demand is to boost expected profitability from investment (i.e., the MEC), which could
+be done by increasing total current money expenditures in the economy, i.e., via
+aggregate demand. It is in recessions that the case is made for vigorous aggregate demand
+stimuli. Total current spending will help validate past expenditures undertaken by
+entrepreneurs and can help stabilize investment and the business cycle.
+There are many factors that can affect the point of effective demand and boosting
+aggregate demand is but one option of influencing these factors. However, “plugging the
+gap,” as it is discussed today, is not the leading method of Keynesian analysis; this is
+8
+because, as the entire corpus of his work shows, while it is possible to move the point of
+effective demand, it is impossible to fix it at full employment.
+III. THE PROBLEM WITH FIXING EFFECTIVE DEMAND AT FULL
+EMPLOYMENT
+The difficulties with fixing the point of effective demand at full employment are well
+known. Working with the marginal efficiency of money to influence private investment
+in the face of depressed expectation, Keynes argued, may prove to be like “pushing on a
+string.” This would make monetary policy futile, especially when interest rates are
+already very low. Secondly, boosting the marginal efficiency of capital (or profit
+expectations) also has its limitations because it is not under the direct control of policy.
+Low rates of interest and an increase in total money expenditures can improve the profits
+outlook and entice entrepreneurs to redirect their money from financial assets to real
+production. Government spending can be thought of as filling “the cash boxes of private
+entrepreneurs” (Kregel 2008), but how large an injection of liquidity is need to induce
+those investors to start employing is difficult to gauge. This is because while aggregate
+demand will increase the amount of liquid assets in the system, it may not be able to
+expediently shift individual preference away from holding them.
+Such would be the problems under a liquidity-trap scenario where money, as
+Keynes argued, becomes “a bottomless sink of purchasing power…[and] there is no
+value for it at which demand [for it] is diverted … into a demand for other things”
+(Keynes 1964 [1936]: 231). The trouble with filling investor’s cash boxes as a policy for
+full employment rests with the state of expectations, which may or may not improve fast
+enough with the provision of liquid financial assets.
+In any event, it is during severe slumps that we the find strongest support for
+broad aggregate demand management policies, because we can be reasonably sure that an
+increase in money expenditure would sooner or later increase employment. As Harrod
+(1972 [1951]: 477) put it: “In times of depression and unemployment it was desirable to
+encourage spending and lavishness.” But even in recessions, any type of aggregate
+demand policy will not have equal employment creation effects; when swift reduction of
+9
+unemployment is needed, targeted demand via public works would do the job. And
+Keynes always advocated large-scale public capital improvements in severe slumps.5
+
+Suppose, however, that we are in an expansion. Private spending and investment
+are strong and the economy is approaching full employment. In these circumstances,
+additional money expenditures will boost the MEC, but will not have the same
+employment-creation effects as in recessions. This is due to the structure of the economy.
+Near full employment, the MEC may be quite high, but aggregate demand will likely
+increase it further in those industries that have already been saturated and are producing
+at full capacity. This is because for Keynes, “effective demand spends itself, partly in
+affecting output and partly in affecting price,’ which will depend on the respective two
+elasticities. He explains:
+Some products take time to produce, so that it is practically
+impossible to increase the supply for them quickly. Thus, if
+additional demand is directed to them without notice, they
+will show low elasticity of employment. (Keynes 1964
+[1936]: 285)
+Affecting the MEC near full employment via an increase in aggregate demand
+need not have the same employment-creation effects. In fact, it will likely produce
+inflationary pressures in those industries with low elasticity of employment.
+Because the structure of the economy distributes the increase in aggregate
+effective demand unevenly, a boost in total current expenditures will not be able to
+absorb the remaining (structurally) unemployed and will also push up prices in certain
+industries. The first problem with boosting aggregate demand in expansions is that it
+causes prices to rise before it produces full employment. The second problem is that near
+full employment it also creates more unequal income distribution between capital and
+labor, favoring the latter. Keynes argued that:
+
+5
+ As it will be noted later, large-scale public works are needed not only for the swift reduction in
+unemployment, but also for a generalized socialization of investment, which Keynes considered to be a
+prerequisite for economic stability.
+10
+[I]f the increase in demand is directed to products with a
+relatively low elasticity of employment, a larger proportion
+of it will go to swell the incomes of entrepreneurs and a
+smaller proportion to swell the incomes of wage earners and
+other price cost factors. (Keynes 1964 [1936]: 287)
+For these reasons, to guarantee full employment in expansions, it is not more
+demand, but appropriately distributed demand, is needed.
+For the ways in which we suppose the increase in aggregate
+demand to be distributed between different commodities
+may considerably influence the volume of employment. If
+for example the increased demand is largely directed towards
+products which have a high elasticity of employment, the
+aggregate increase in employment will be greater than if it is
+largely directed towards products which have low elasticity
+of employment.
+ In the same way employment may fall off without
+there having been any change in aggregate demand, if the
+direction of demand is changed in favor of products having a
+relatively low elasticity of employment. (Keynes 1964
+[1936]: 286)
+In sum, general aggregate demand helps in depressions, but to yield maximum
+employment creation, it is more effective to target it to the unemployed directly via
+public works. Close to full employment, an increase in aggregate demand brings
+inflationary and distributional problems because of the structure of production. As
+Keynes recognized, the closer we are to full employment, the more troublesome it
+becomes to secure a further given increase in employment via an increase in aggregate
+real income (Keynes 1964 [1936]: 118).
+We cannot conclude from this that the goal of full employment is abandoned once
+we approach it, as it is done by mainstream economists who define full employment as
+the noninflationary level of unemployment (or the remaining frictional and structural
+unemployment). For Keynes, even in expansions, the goal of full employment is still
+important. The problem to wrestle with is structural unemployment, which should “be
+treated as something to be handled forcibly and not something to be defeatist about”
+(Keynes 1980: 357). To deal with structural unemployment, government can redirect its
+public works to those “special areas” with the highest remaining unemployment. Keynes
+11
+and the government had agreed that they could take “the contract to the men, rather than
+the men to the contract” (Brown 1936).
+These are the core reasons why fixing the point of effective demand at full
+employment is hard to do. These difficulties were well understood and developed by
+Keynes’s associates and followers. Kaldor (1938), for example, looks at the
+complementarity and specificity of the inputs of production to explain why privately
+determined full employment is unstable. Kalecki (1945: 83, original emphasis), in a
+similar vein, argues that to maintain full employment via private means, “the rate of
+interest must continuously fall; the income tax must be continuously reduced or the
+subsidies to investment must continuously rise.” When comparing these strategies to the
+one via public investment, he finds that cumulative stimuli are not required for the latter
+and that the only logical solution to the problem of unemployment is for government to
+socialize private investment and control its growth rate lockstep with population growth
+and the increase in productivity of the labor force.
+IV. HOW PUBLIC WORKS CIRCUMVENT THE PROBLEM OF FIXING
+EFFECTIVE DEMAND
+Keynes’s targeted demand approach can be best understood from his writings in the
+interwar period. Because he is often criticized for only studying the conditions of
+economies in depression, it is important to dispel this view and demonstrate the benefits
+of public works near full employment. His writings in the interwar period, his short
+pamphlet How to Pay for the War (1940), and much of his work on postwar policy are
+instructive, not only because they explicate his view on how to maintain full employment
+once we get there, but also because they set out his method of analysis, which, as I shall
+argue later, is not the same thing as contemporary “output gap” analysis.
+Let’s begin first with how to maintain full employment. Very early on Keynes
+recognized that public works were also crucial when the private sector is working at full
+capacity.
+12
+My argument is that if public works are stopped, particularly
+at a time when private enterprise is stopping from temporary
+overcapacity and is therefore not in a position to expand,
+then private saving can do any amount of harm. You
+remember what I said—every pound saved puts a man out of
+work. (Keynes 1982: 150)
+What Keynes wanted to press on his contemporaries was that the logic of the
+objective and subjective factors that determined private consumption meant that the
+private sector would not expend its entire earned income. And so “it isn’t really the
+business,” Keynes argued, “of private individuals to spend more than they naturally
+would, any more than it is their business to provide for the unemployed by private
+charity” (Keynes 1982: 151). Furthermore, because of the volatile nature of investor
+expectations, full employment, if attained, cannot be sustained. Public works and, more
+specifically, the sizeable socialization of investment were the answer:
+If two-thirds or three-quarters of total investment is carried
+out or can be influenced by public or semipublic bodies, a
+long-term program of a stable character should be capable of
+reducing the potential range of fluctuation… (Keynes 1980:
+322)
+The provision of full employment should be “done by the organized community
+as a whole—that is by public authorities” (Keynes 1982: 151).
+As noted above, discontinuation of public works in conditions of private-sector
+overcapacity is undesirable, as the latter cannot expand to absorb those laid off from the
+public sector. This was well understood by Keynes’s contemporaries in the context of
+maintaining full employment after the Second World War. Meade, for example, echoed
+this sentiment:
+“there is little understanding…that the immediate postwar
+unemployment that may result from demobilization is one
+that cannot suitably be cured by general expansive policies.
+It requires, of course, rather policies of retraining, labor
+transference and general adjustment to peacetime uses.”
+(Meade in Keynes [1980: 314])
+13
+In other words, what is needed is not to discontinue public works, but to transform them
+from military to peacetime industry while retraining workers simultaneously for the
+needs of civilian production.
+While industry restructuring may take a while to do, Keynes did not believe that
+the maintenance of full employment was a formidable task. The required remedies would
+be of a much smaller scale than Meade had suggested, as it was easier to “prevent the ball
+rolling [i.e., to prevent the development of unemployment] than would be required to stop
+it rolling once it started [i.e., to solve unemployment once it developed]” (Keynes 1980:
+316). In this sense, public works were favored as a long-term solution. Keynes often
+chided his contemporaries for not fully grasping the role of public works both as a shortand
+long-term solution. In response to Meade, he wrote:
+I think you lay too much stress on cure and too little on
+prevention. It is quite true that a fluctuating volume of public
+works at short notice is a clumsy form of cure and not likely
+to be completely successful. On the other hand, if the bulk of
+investment is under public or semi-public control and we go
+in for a stable long-term programme, serious fluctuations are
+enormously less likely to occur. (Keynes 1980: 326)
+Thus, Keynes argued, Meade did less than justice to large-scale public
+employment schemes by pointing out deficiencies in the short term without
+acknowledging their important preventive benefits in the long run. Public works
+circumvent the problems of relying on private spending and investment for full
+employment, but they also impart stability on the system in the long run and must be
+therefore maintained, even when we reach full employment.
+But, for Keynes, another conundrum demanded resolution. How does one
+maintain full employment and, at the same time, prevent any possible inflationary
+pressures from developing?6
+ He deals with this specific problem in a series of articles in
+The Times in 1937 and 1939, which later culminated in the short pamphlet How to Pay
+for The War. A full employment wartime economy is likely to develop what Keynes
+called an “inflationary gap” and it is here that the gap method comes into view. It is
+
+6
+ Recall that for Keynes the true meaning of inflation was when prices started increasing after full
+employment was reached.
+14
+important to note that this method was developed in the context of true inflation. While
+he did not believe that more money expenditures would be sufficient to close a
+recessionary gap, he did believe that less money expenditures are needed to close an
+inflationary gap. His solution to inflation, however, was not one that sacrificed
+employment, as is currently advocated by mainstream theory on the basis of the Philips
+Curve relationship. This scenario is important to study because it shows the asymmetric
+nature of demand-management policy.
+Keynes argued that any increase in spending toward the war effort would occur at
+the expense of prewar consumption. The increased demands of the war necessitated
+increasing expenditures on military production, while the fully employed “working
+classes would command substantially more [consumer] goods than before” (Keynes
+1980: 42). Clearly, an inflationary environment would develop. How does one solve the
+problem of inflation? Do we shed public works in order to reduce the income generated?
+No. Keynes did suggest that localities should postpone new projects as long as they can
+reasonably be held back (Peden 1980: 1), but he did not advocate shutting down public
+works or laying off workers. It may be necessary to retard certain types of investment,
+those that are usually undertaken in the center rather than in the periphery of economic
+activity, which is why he advocated public works for the “special” or “distressed areas.”
+This regional approach to maintaining full employment has not received sufficient
+recognition (Peden 1980: 18). A comprehensive look at Keynes’s employment policy is
+more consistent with a targeted demand approach to full employment than with one
+relying on aggregate demand.
+So how does one close the inflationary gap? For Keynes, not layoffs, but
+reduction in spending is the solution. Inflation can be addressed in three ways. The first is
+to let prices rise, i.e., let inflation manifest itself, which could entice firm production
+(expansion in supply) in those sectors observing the price increases. In full employment
+conditions, however, such a “solution” to inflation is undesirable because it will be selfreinforcing.
+Wage demands will press on to compensate for the rise in prices, producing a
+wage-price spiral and exasperating inflation. The second solution is to reduce income
+growth through increasing taxation. This, however, would mean taxing the working
+classes (including the previously unemployed who were now enjoying strong income
+15
+growth), therefore depriving them of the fruits of their labor, which, for Keynes, was an
+unacceptable solution. The best solution in his view was to produce a scheme of deferred
+payments, where incomes were taxed in a very progressive manner, but those taxes were
+to be deposited in savings deposits, which would be accessible for spending after the war
+when industry converts to civilian production. In this plan, a large proportion of the lowincome
+working classes would be exempt from these “forced savings” due to the
+progressive nature of the tax, and those savings would be available for the repayment of
+debt (i.e., mortgages), but not for new consumption. This form of taxation is preferred as
+it allows the income earners to have access to their deferred payment (which is stored in
+the form of wealth) after the war. This plan drew much criticism from government and
+labor, but the essence of the approach to closing the inflationary gap did not rely on
+laying off workers; the solution was an increase in “desired” net saving (or, as he called
+it, thrift).
+Before we examine Keynes’s method for solving the inflationary gap, a few final
+words are necessary about the importance of public works. For Keynes, the first objective
+of policy was to hire people by whatever means possible. Once full employment had been
+reached, policy must plan, redesign, and substitute expenditures to make these public
+works useful and effective and to integrate them into a broader agenda for long-term,
+stable public investment. We can call Keynes’s approach to full employment a “on the
+spot” approach. As Keynes himself argued, a “man-year of employment on the spot” can
+be done immediately without any obstacles (Keynes 1982: 171). As is also clear from the
+McMillan Committee deliberations, it is immaterial whether the rate of return on public
+works is 5 percent, 3 percent, or 1 percent; the first important result is a reduction in
+unemployment and the second result is that some yield is better than no yield at all
+(Keynes 1981b: 174–175).
+Although Keynes did not advocate pyramid building or burying jars with money
+and employing the unemployed to dig them out, he did provide such examples of public
+works largely to emphasize the importance of this “on the spot” approach to
+unemployment. The benefits of public works are, first and foremost, to be ascertained by
+their employment-generation effects. Once this is done, Keynes argued “there can be only
+one object in the economy, namely to substitute some other, better, and wiser piece of
+16
+expenditure for it” (Keynes 1982: 146), i.e., to redesign those public works. Keynes of
+course emphasized that there was no dearth of useful things to do and that whatever we
+do was still better than not doing anything at all. But we need cleverness to design public
+employment schemes for true full employment.
+He argued that “it is easy to employ 80 to 90 percent of the national
+resources…but to employ 95 to 100 percent is a different task altogether” (Keynes 1982:
+409). Care and management in planning are needed. As Peden (1980: 13) points out,
+Keynes thus believed that 95 to 100 percent of national resources, including labor, can be
+employed;7
+ for this task, it is not more demand that is needed, but rightly (and cleverly)
+distributed demand. “Anything that we can actually do we can afford. Once done it is
+there. Nothing can take it away from us” (Keynes 1980: 270). With policies that sustain
+the unemployed via unemployment insurance, we are not creating anything, so we “have
+nothing to show for it except more men on the dole” (Keynes 1982: 149).
+So while the primary objective of policy is to offer employment at the margin,
+Keynes never believed that public employment schemes could not be executed in a welldevised
+manner. Could we not use more universities, more local schools, and recreation
+areas, more theaters, museums, and galleries, more cafes or dance halls, Keynes asked.
+But surely there are many other pressing needs that Britain can address: public works can
+increase housing, improve the transportation infrastructure, and “replan the environment
+of our daily life […] Not only shall we come to possess these excellent things, but […]
+we can hope to keep employment good for many years to come” (Keynes 1980: 270).
+This is the essence of a good policy; it is not only driven by the intellectual conviction
+that full employment is essential and achievable, but it is also designed with imagination
+and cleverness in creating projects that are beneficial to the community as a whole.
+The needs of the community and the distribution of weak and overheating
+economic sectors would determine where policy should direct demand and what the
+nature of public works would be. In the 1930s, there were very few statistical sources that
+provided the needed information for designing public policy and Keynes was very vocal
+about the need for better statistics. It is in his discussions about statistics and the
+measurement of the inflation gap that we can fully appreciate the difference between
+
+7
+ This, as Keynes pointed out, is done by rightly distributed demand.
+17
+Keynes’s own method and the modern calls to fill the gap between current and potential
+output.
+V. CLOSING THE OUTPUT GAP: A KEYNESIAN METHOD?
+As noted earlier, closing the output gap is an approach that is embraced by the
+mainstream, as well as many Post Keynesians. Keynes did speak of a demand gap,
+however, but in the aggregate he emphasized the shortfall in the demand for labor, not
+the demand for output. This is not an insignificant distinction. His methodology, which
+underpins government budgeting for closing the labor demand gap, is laid out in the
+statistical appendix of a memorandum on national income and expenditure after the war.
+This paper produces estimates of the level of current spending as a function of labor and
+its pay allowances. Keynes’s measure of income and output was first suggested in the
+General Theory in his discussion on the choice of units. Whenever he spoke of an
+increase in expenditures that would produce a certain percentage increase in output, this
+increase was measured in wage units. In the deliberations about budgetary planning after
+the war, Keynes, in collaboration with Rick Stone, attempted to give guidance on
+budgetary expenditures needed to sustain full employment. All calculations were based
+on some assumptions of the number of employed and unemployed men and women. The
+goal was to outline a method of measuring current production as a function of
+employment, labor productivity, and factor prices. In other words, any output gap that
+needed to be plugged was measured in terms of number of unemployed that need to be
+hired (Keynes 1980: 280–307).
+For Keynes, the gap that needed closing was the labor demand gap, not an output
+gap as measured in current prices. In fact, he explicitly objected to the latter measure
+(more below). Let’s first look at the textbook method for solving unemployment by
+closing the output gap.
+This approach comes to us from various incarnations of Okun’s law, which posit a
+statistical relationship between the rate of growth of output and unemployment (Okun
+1962). The law states that a 1 percent increase in unemployment would bring about
+approximately a 3 percent decline in GDP growth. This relationship has been flipped and
+18
+used as a policy guide, suggesting that to reduce unemployment, the rate of growth in
+current output must be greater than the rate of growth in potential output. In other words,
+if policy manages to stimulate growth at a rate faster than the rate of growth of potential
+GDP, unemployment can be reduced and (possibly) even eliminated. This approach has
+given rise to broad-based, pro-growth policies. Note however that the original
+observation of Arthur Okun (the economist after whom the law is named) was that, when
+growth deviated by 1 percent from its long-term trend, unemployment fell by 0.3 percent.
+He cautioned that the relationship between growth and unemployment was very weak.
+Reversing his analysis, however, has given powerful ammunition to growth-at-all-cost
+policies. Because investment is the active component of growth, private-investment
+stimuli of various kinds (supply- or demand-side) have been the preferred policy option
+to close the output gap.
+Accelerating growth would produce full employment, so long as the economy
+does not run into some inflationary barrier in the meantime. But, as Keynes had pointed
+out, price pressures in certain sectors tend to kick in before output reaches its full
+employment level. Modern policy often sacrifices the goal of full employment in the
+name of maintaining price stability, since the latter is considered to be more devastating
+to economic stability. Paradoxically, it is precisely this approach of closing the gap that
+advocates pro-investment, growth-at-all-cost aggregate demand policies that is generating
+the inflationary pressures. Consequently, the whole enterprise of achieving full
+employment is doomed to fail from the outset because of the inappropriate tools
+employed.
+Keynes, too, was interested in closing the gap, but he measured it in labor units,
+which is one reason why he emphasized the primary employment effects of public works.
+Public investment is a direct approach to reducing unemployment. Add to that the
+secondary employment effects produced by the multiplier effect and we can estimate how
+much public-works spending is needed to close the labor demand gap. Whenever Keynes
+spoke of how much national income and expenditure are needed to maintain full
+employment, his “calculations are in terms of equivalent men … and women, if they are
+unemployed…” (Keynes 1980: 298). He did not talk about deficient demand of output,
+but of deficient demand of labor (e.g., discussions on postwar spending for full
+19
+employment in Keynes [1980: 277–307]). This lends methodological support to the
+present argument that the Keynes’s approach to full employment was one of targeted
+demand, whereby policy targets unemployment directly, not some generalized level of
+output or economic activity.
+One can extrapolate from this analysis the following argument: instead of aiming
+for some level of growth, which may or may not bring full employment, the objective
+should be to target a clear and attainable goal of full employment directly.8
+ Okun’s law,
+or any form of gap analysis that compares current output to some level of potential
+output, is a backward way of thinking about full employment. When the goal is growth
+via stimulating investment (as in contemporary aggregate demand management), policy
+tends to produce inflationary forces that, in turn, induce additional policy measures to
+fight inflation—which defeats the original purpose and automatically precludes the
+economy from reaching full employment (this is why potential output in mainstream
+theory is not consistent with zero involuntary unemployment, but is pegged at the
+noninflationary level of unemployment). Policies that target a particular rate of growth
+may be associated with many different levels of employment. An alternative policy
+option is one that targets full employment and is associated with different levels of
+growth. This is not an argument for sacrificing growth in the name of full employment; it
+is an argument that growth and full employment are two different objectives, which may
+require different policies where one need not conflict with the other. One could also
+argue that what constitutes adequate growth will be difficult to ascertain before full
+employment has been attained. When full employment is achieved via a direct job
+creation, market forces aided by a careful institutional design of the public sector
+programs will determine the distribution of private and public employment, technique of
+production, productivity, and, therefore, growth.
+Keynes flatly rejected calculations of potential output. While acknowledging his
+support for the important work of Mr. Colin Clark (the father of British national
+
+8
+ And there is debate on what this attainable full employment target for Keynes would have been. Peden
+(1984) argues that Keynes was not wedded to a particular level, as he did not believe that spending beyond
+certain rate of unemployment—be that 12, 5, or 1 percent—must necessarily be inflationary. Skidelsky
+(2001), by contrast, implies that Keynes must have had some noninflationary level in mind since, in his
+writings from 1937 and forward, he talks about ways to avoid the inflationary impact of increased
+aggregate expenditures.
+20
+statistics), Keynes vigorously critiqued his calculations of gross national income, which
+were often taken to give the potential rate of current consumption and investment
+measured at market prices. This method was unacceptable to Keynes because such
+estimates were impossible to produce over a period of time, since they would depend on
+the “technical considerations and the precise character of the plant in use.” Such
+measures of potential output have useful meaning only over an “instantaneous or very
+brief period” (Keynes 1980: 71). Keynes saw no practical purpose for such estimates,
+since the economy was an evolving organism where the character of consumption and
+investment changed. Potential output is even more misleading (Keynes calls it an
+“impostor”) as a concept for the long run. Such measures do not take into account that
+shifts in consumption and investment may involve loss of capital or labor when they only
+attempt to look at the market value of consumption or investment goods. In fact,
+changing the structure of production and diverting resources from one use to another is
+the key reason why potential output cannot be measured over the long run or over a year
+for that matter. Most importantly, the loss of labor from such a diversion needs to be
+treated separately, which is why Keynes’s national output definition is in terms of manhours
+which might be worked (Keynes 1980: 73).
+Modern output gap analysis is wholly inconsistent with Keynes’s method for
+producing full employment. Any attempt at integration of these approaches must either
+redefine potential output in terms of wage units or unemployment must be addressed
+directly and independently of the definition of potential output. “Our income is only
+another name for what we produce when we are employed” (Keynes 1982: 156). Any
+meaningful Keynesian approach to filling the gap would be limited to plugging the labor
+demand gap. Keynes’s method is also useful because potential output is not limited to
+hiring all those who are presently unemployed. For Keynes, expansion of output would
+depend on “greater intensity of work by the existing labor force and on the increase of the
+labor force from the ranks of the unemployed and from those not previously in the labor
+market” (Keynes 1981b: 52). In other words, he has a more dynamic view of potential
+output that will fluctuate not just with the unemployed, but also with those that may be
+currently outside the labor market.
+21
+Filling the gap according to traditional aggregate demand management methods
+usually relies on stimulating investment and growth. It therefore attempts to manage the
+most unstable aspects of the economy and those that all but ensure a below–full
+employment equilibrium. As experience has shown, filling the gap this way is an
+impossible thing to do due to the volatility of profit expectations, the associated
+inflationary and distributional problems near full employment, and the structure of
+production. Thereby pro-growth, pro-investment policies that attempt to push growth
+faster than the growth in potential output as a function of current prices is a wrongheaded
+approach for full employment. But so is attempting to pump enough government
+deficit spending. The only sense in which we can speak about plugging the gap is to
+speak of plugging the gap for labor, and for Keynes this was done directly via public
+works. To reinstate the link between fiscal policy and full employment it is necessary to
+understand and embrace Keynes’s methodology of measuring output, something that has
+been emphasized little by Post Keynesians.9
+ For this task, too, conviction and cleverness
+are required.
+VI. CONCLUSION
+Keynes’s effective demand approach to employment determination is not the same as the
+modern aggregate demand approach. Revisiting Keynes’s contribution makes clear why
+pinning the point of effective demand at full employment is impossible to do via
+aggregate demand stimuli. This is due to the structure of the economy, which ensures that
+near full employment, more money expenditures generate inflation and erode income
+distribution. To get to full employment, Keynes argued for a better targeting of demand,
+not necessarily for more aggregate demand. Although a rapid shortfall of aggregate
+demand can produce a serious downturn, even in severe slumps a targeted approach to
+unemployment is preferred. This is because the desirability of public policy is measured
+by its respective employment-creation effects, where different aggregate demand policies
+have a different impact on unemployment. This is why Keynes advocated a direct
+approach to unemployment via public works. He did not promote broad-based fiscal
+
+9
+ See Wray and Tcherneva (2005) as a recent exception.
+22
+policies, but focused on public employment schemes. His approach to full employment is
+thus best described as an “on the spot” approach.
+Although deficient demand is what produces unemployment, closing the demand
+gap is not Keynes’s solution. Another important difference between modern gap
+approaches and Keynes’s method is that to do the former, some measure of potential
+output is necessary, but such a measure can only be “an impostor,” as it cannot usefully
+tell us what the potential level of spending in the economy is. This is because the
+economy is a living organism where the character of investment and consumption
+changes continuously. Potential output is a malleable definition that fluctuates with the
+technique of production, the composition of demand, the intensity of work, labor force
+participation, as well as other factors, therefore, potential output offers no useful guide
+about the capacity of the economy beyond some instantaneous and brief period of time.
+Thus, attempts to plug the output gap are wholly misguided as employment policy, unless
+they are based on directly plugging the labor demand gap. It is in this sense that Keynes’s
+approach to full employment is a targeted demand approach, one that targets the
+unemployed via direct job creation. Of course, to design public employment schemes that
+can attain and maintain full employment, a considerable amount of conviction and
+cleverness are required.
+23
