@@ -10,6 +10,7 @@ from unicode_csv_handler import UnicodeCsvReader
 import glob
 from markov_chain import MarkovChain
 from hashtags import *
+from twitter_utils import *
 
 
 auth = tweepy.OAuthHandler(keys['consumer_key'], keys['consumer_secret'])
@@ -18,16 +19,18 @@ auth.set_access_token(keys['access_token'], keys['access_token_secret'])
 max_length = 140
 
 
-# def get_text():
-#     text = ''
-#     read_files = glob.glob("text/*.txt")
-#     for f in read_files:
-#         with open(f, "rb") as infile:
-#             text += infile.read()
-#     return text
-
-# mc = MarkovChain()
-# mc.generateDatabase(get_text())
+def get_text():
+    # text = ''
+    # read_files = glob.glob("text/*.txt")
+    # for f in read_files:
+    #     with open(f, "rb") as infile:
+    #         text += infile.read()
+    # return text
+    data = set()
+    with open('catured_text.txt') as f:
+        for row in f.readlines():
+            data.add(row)
+    return data
 
 
 def tweet_out(tweet):
@@ -42,26 +45,44 @@ def hashtag_randomizer():
     return hashtag_mark + selected_hashtag
 
 
-def check_sentence_length(sent, max_length):
-    if len(sent) > max_length:
-        return False
-    else:
-        return True
-
-
-def check_sentence_grammar(sent):
-    pass
-
-
-def generate_markov_sentence(original_sentence, remaining_length):
-    valid_sent = False
-    seed = ' '.join(original_sentence.split()[0:2])
-    while not valid_sent:
+def generate_markov_sentence(original_sentence):
+    mc = MarkovChain()
+    mc.generateDatabase((' '.join(get_text())))
+    stripped = strip_tags(original_sentence)
+    try:
+        seed = ' '.join(stripped.split()[0:3])
         sent = mc.generateStringWithSeed(seed)
-        valid_sent = check_sentence_length(sent, remaining_length)
-        # if valid_sent:
-        #     valid_sent = check_sentence_grammar(sent)
+    except:
+        try:
+            seed = ' '.join(stripped.split()[0:2])
+            sent = mc.generateStringWithSeed(seed)
+        except:
+            sent = mc.generateString()
     return sent
+
+
+def get_hashtags(count):
+    hashtags = set()
+    while len(hashtags) != count:
+        hashtags.add(hashtag_randomizer())
+    hashtag_string = ' '.join(hashtags)
+    return ' ' + hashtag_string + ' '
+
+
+def fit_length(msg, link):
+    content_end = get_hashtags(1) + link
+    message = msg + content_end
+    if len(message) > max_length:
+        overrun = len(message) - max_length
+        message = msg[:-overrun-3] + '...' + content_end
+        return message
+    else:
+        extra = max_length - len(message)
+        for i in reversed(range(2, 4)):
+            new_message = msg + get_hashtags(i) + link
+            if len(new_message) < max_length:
+                return new_message
+        return message
 
 
 def get_content():
@@ -71,11 +92,13 @@ def get_content():
     selected_content = random.choice(full_data)
     original_sentence = selected_content[0]
     link = selected_content[1]
-    content_end = ' ' + hashtag_randomizer() + ' ' + link
-    remaining_length = max_length - len(content_end)
-    # message = generate_markov_sentence(original_sentence, remaining_length)
-    # return message + content_end
-    message = original_sentence + content_end
+    choices = ['original'] * 40 + ['markov'] * 60
+    choice = random.choice(choices)
+    if choice == 'original':
+        message = fit_length(original_sentence, link)
+    else:
+        markov = generate_markov_sentence(original_sentence)
+        message = fit_length(markov, link)
     return message
 
 
@@ -91,7 +114,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-recreate markovchain every tweet so it always stays updated. read captured.text and then dump the sentences into a set so identicals are dropped.
-randomly use the markov sentence some percentage of the time and the other percentage use the original sentence
-make sure sentence plus one hashtag does not run over limit. if much less than original then add a second or third hashtag
