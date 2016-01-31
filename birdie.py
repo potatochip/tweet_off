@@ -61,6 +61,12 @@ def generate_markov_sentence(original_sentence):
     return sent
 
 
+def generate_seedless_markov_sentence():
+    mc = MarkovChain()
+    mc.generateDatabase((' '.join(get_text())))
+    return mc.generateString()
+
+
 def get_hashtags(count):
     hashtags = set()
     while len(hashtags) != count:
@@ -107,7 +113,7 @@ def get_content():
         while len(markov.split()) < 4:
             print 'too short'
             print markov
-            markov = generateString()
+            markov = generate_seedless_markov_sentence()
         message = fit_length(markov, link)
     return message
 
