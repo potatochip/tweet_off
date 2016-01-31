@@ -16,7 +16,7 @@ from twitter_utils import *
 auth = tweepy.OAuthHandler(keys['consumer_key'], keys['consumer_secret'])
 auth.set_access_token(keys['access_token'], keys['access_token_secret'])
 
-max_length = 140
+max_length = 139
 
 
 def get_text():
@@ -77,11 +77,11 @@ def fit_length(msg, link):
         message = msg[:-overrun-3] + '...' + content_end
         return message
     else:
-        for i in reversed(range(2, 4)):
-            new_message = msg + get_hashtags(i) + link
-            if len(new_message) < max_length:
-                return new_message
-        return message
+        new_message = msg + get_hashtags(2) + link
+        if len(new_message) < max_length:
+            return new_message
+        else:
+            return message
 
 
 def get_content():
@@ -98,6 +98,8 @@ def get_content():
     else:
         markov = ''
         while len(markov.split()) < 5:
+            print 'too short'
+            print markov
             markov = generate_markov_sentence(original_sentence)
         message = fit_length(markov, link)
     return message
