@@ -96,7 +96,9 @@ def get_content():
     if choice == 'original':
         message = fit_length(original_sentence, link)
     else:
-        markov = generate_markov_sentence(original_sentence)
+        markov = ''
+        while len(markov.split()) < 5:
+            markov = generate_markov_sentence(original_sentence)
         message = fit_length(markov, link)
     return message
 
