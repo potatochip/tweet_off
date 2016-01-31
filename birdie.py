@@ -97,7 +97,8 @@ def get_content():
     selected_content = random.choice(full_data)
     original_sentence = selected_content[0]
     link = selected_content[1]
-    choices = ['original'] * 40 + ['markov_seed'] * 30 + ['markov_gen'] * 30
+    # choices = ['original'] * 40 + ['markov_seed'] * 30 + ['markov_gen'] * 30
+    choices = ['original', 'markov_seed', 'markov_gen']
     choice = random.choice(choices)
     if choice == 'original':
         message = fit_length(original_sentence, link)
@@ -108,7 +109,7 @@ def get_content():
             print markov
             markov = generate_markov_sentence(original_sentence)
         message = fit_length(markov, link)
-    else:
+    elif choic == 'markov_gen':
         markov = ''
         while len(markov.split()) < 4:
             print 'too short'
