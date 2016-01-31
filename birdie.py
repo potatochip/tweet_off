@@ -106,7 +106,7 @@ def main():
         msg = get_content()
         if len(msg) < max_length:
             tweet_out(msg)
-            sleep(random.randint(1800, 7200))
+            sleep(random.randint(1800, 5400))
         else:
             print('TOO LONG: {}'.format(msg))
 
