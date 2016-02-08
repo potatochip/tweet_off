@@ -101,6 +101,18 @@ def strip_tags(text):
         tokens.pop()
         text = ' '.join(tokens)
 
+    # remove any via and the word following it
+    tokens = text.split()
+    if 'via' in tokens:
+        ix = tokens.index('via')
+        tokens.pop(ix)
+        try:
+            tokens.pop(ix+1)
+        except:
+            pass
+        text = ' '.join(tokens)
+
+
     # remove junk at front of tweet
     tokens = text.split()
     more_slop = True

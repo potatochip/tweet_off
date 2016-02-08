@@ -3,13 +3,13 @@ winning
 '''
 #TODO: move data into pickled set? more efficient and faster but then cant just edit in a text browser
 #TODO: allow updating of content.csv files from browser. flask-admin app?
+#TODO: add post to website and link to twitter page
 
 from keys import keys
 import tweepy
 from time import sleep
 import random
 from unicode_csv_handler import UnicodeCsvReader
-import glob
 from markov_chain import MarkovChain
 from hashtags import *
 from twitter_utils import *
@@ -18,16 +18,10 @@ from twitter_utils import *
 auth = tweepy.OAuthHandler(keys['consumer_key'], keys['consumer_secret'])
 auth.set_access_token(keys['access_token'], keys['access_token_secret'])
 
-max_length = 139
+max_length = 140
 
 
 def get_text():
-    # text = ''
-    # read_files = glob.glob("text/*.txt")
-    # for f in read_files:
-    #     with open(f, "rb") as infile:
-    #         text += infile.read()
-    # return text
     data = set()
     with open('catured_text.txt') as f:
         for row in f.readlines():
@@ -47,6 +41,19 @@ def hashtag_randomizer():
     return hashtag_mark + selected_hashtag
 
 
+def check_blacklist(sentence):
+    if '"' in sentence:
+        # confirm closing quote if there is an opening quote
+        ix = sentence.index('"')
+        try:
+            if '"' not in sentence[ix+1:]:
+                return True
+        except:
+            return True
+    if 'via' in sentence:
+        return True
+
+
 def generate_markov_sentence(original_sentence):
     mc = MarkovChain()
     mc.generateDatabase((' '.join(get_text())))
@@ -60,13 +67,20 @@ def generate_markov_sentence(original_sentence):
             sent = mc.generateStringWithSeed(seed)
         except:
             sent = mc.generateString()
-    return sent
+    if check_blacklist(sent):
+        return ''
+    else:
+        return sentence_case(sent + '.')
 
 
 def generate_seedless_markov_sentence():
     mc = MarkovChain()
     mc.generateDatabase((' '.join(get_text())))
-    return mc.generateString()
+    sent = mc.generateString()
+    if check_blacklist(sent):
+        return ''
+    else:
+        return sentence_case(sent + '.')
 
 
 def get_hashtags(count):
@@ -78,15 +92,17 @@ def get_hashtags(count):
 
 
 def fit_length(msg, link):
-    content_end = get_hashtags(1) + link
+    content_end = get_hashtags(1) + 'via ' + link
     message = msg + content_end
-    if len(message) > max_length:
-        overrun = len(message) - max_length
+    msg_length = len(message) - len(link) + 23
+    if msg_length > max_length:
+        overrun = msg_length - max_length
         message = msg[:-overrun-3] + '...' + content_end
         return message
     else:
-        new_message = msg + get_hashtags(2) + link
-        if len(new_message) < max_length:
+        new_message = msg + get_hashtags(2) + 'via ' + link
+        new_msg_length = len(new_message) - len(link) + 23
+        if new_msg_length < max_length:
             return new_message
         else:
             return message
@@ -106,14 +122,14 @@ def get_content():
         message = fit_length(original_sentence, link)
     elif choice == 'markov_seed':
         markov = ''
-        while len(markov.split()) < 4:
+        while len(markov.split()) < 2:
             print 'too short'
             print markov
             markov = generate_markov_sentence(original_sentence)
         message = fit_length(markov, link)
-    elif choic == 'markov_gen':
+    elif choice == 'markov_gen':
         markov = ''
-        while len(markov.split()) < 4:
+        while len(markov.split()) < 2:
             print 'too short'
             print markov
             markov = generate_seedless_markov_sentence()
@@ -123,12 +139,12 @@ def get_content():
 
 def main():
     while True:
-        msg = get_content()
-        if len(msg) < max_length:
+        try:
+            msg = get_content()
             tweet_out(msg)
             sleep(random.randint(1800, 5400))
-        else:
-            print('TOO LONG: {}'.format(msg))
+        except Exception as e:
+            print e
 
 
 if __name__ == '__main__':
