@@ -23,7 +23,7 @@ max_length = 140
 
 def get_text():
     data = set()
-    with open('catured_text.txt') as f:
+    with open('captured_text.txt') as f:
         for row in f.readlines():
             data.add(row)
     return data
@@ -37,7 +37,7 @@ def tweet_out(tweet):
 
 def hashtag_randomizer():
     hashtag_mark = '#'
-    selected_hashtag = random.choice(list(all_hashtags))
+    selected_hashtag = random.choice(list(employers))
     return hashtag_mark + selected_hashtag
 
 
@@ -70,7 +70,7 @@ def generate_markov_sentence(original_sentence):
     if check_blacklist(sent):
         return ''
     else:
-        return sentence_case(sent + '.')
+        return sentence_case(sent)
 
 
 def generate_seedless_markov_sentence():
@@ -80,7 +80,7 @@ def generate_seedless_markov_sentence():
     if check_blacklist(sent):
         return ''
     else:
-        return sentence_case(sent + '.')
+        return sentence_case(sent)
 
 
 def get_hashtags(count):
@@ -97,7 +97,7 @@ def fit_length(msg, link):
     msg_length = len(message) - len(link) + 23
     if msg_length > max_length:
         overrun = msg_length - max_length
-        message = msg[:-overrun-3] + '...' + content_end
+        message = msg[:-overrun-3].strip() + '...' + content_end
         return message
     else:
         new_message = msg + get_hashtags(2) + 'via ' + link
@@ -106,6 +106,18 @@ def fit_length(msg, link):
             return new_message
         else:
             return message
+
+
+def fix_bugs(text):
+    text = text.replace('\"', '').replace('\'', '')
+    if text[-1] in ':-|,':
+        text = text[:-1]
+    if text[-1] in ['=>', ' -', '->']:
+        text = text[:-2] + '.'
+    if text[-1] not in '.?!':
+        text = text + '.'
+    text = ' '.join(text.split())
+    return text
 
 
 def get_content():
@@ -126,6 +138,7 @@ def get_content():
             print 'too short'
             print markov
             markov = generate_markov_sentence(original_sentence)
+            markov = fix_bugs(markov)
         message = fit_length(markov, link)
     elif choice == 'markov_gen':
         markov = ''
@@ -133,6 +146,7 @@ def get_content():
             print 'too short'
             print markov
             markov = generate_seedless_markov_sentence()
+            markov = fix_bugs(markov)
         message = fit_length(markov, link)
     return message
 
@@ -142,7 +156,7 @@ def main():
         try:
             msg = get_content()
             tweet_out(msg)
-            sleep(random.randint(1800, 5400))
+            sleep(random.randint(3600, 7200))
         except Exception as e:
             print e
 

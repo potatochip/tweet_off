@@ -1,7 +1,6 @@
 '''
 captures text from hiring related hashtags
 '''
-
 import tweepy
 import json
 from unidecode import unidecode
@@ -9,10 +8,15 @@ import HTMLParser
 from keys import keys
 from hashtags import *
 from twitter_utils import *
+import cPickle as pickle
 
 
 auth = tweepy.OAuthHandler(keys['consumer_key'], keys['consumer_secret'])
 auth.set_access_token(keys['access_token'], keys['access_token_secret'])
+
+with open('captured_text.txt') as f:
+    lines = f.readlines()
+    text_set = set(lines)
 
 
 class StreamListener(tweepy.streaming.StreamListener):
@@ -32,25 +36,53 @@ class StreamListener(tweepy.streaming.StreamListener):
             incoming = json.loads(data)
             tweet = standardize_text(incoming['text'])
             user = standardize_text(incoming['user']['screen_name'])
-            if not check_blacklist_text(tweet) and not check_blacklist_user(user):
-                print(user)
+            if any('#'+h in tweet.lower().split() for h in job_seekers):
+                return
+            if check_blacklist_text(tweet) or check_blacklist_user(user):
+                return
+            text = strip_tags(tweet)
+            if text:
+                if len(text.split()) < 5:
+                    return
+                # print(user)
                 print(tweet)
-                text = strip_tags(tweet)
-                print text
-                if len(text.split()) < 3:
-                    print 'TOO SHORT!'
-                else:
-                    save_text(text)
-                print
+                print(text)
+                save_text(text)
+                print('\n')
         except:
             pass
             # with open('error_log.txt', 'a') as file:
             #     file.write(data)
 
 
+# def initialize_pickle():
+#     with open('captured_text.pkl', 'wb') as f:
+#         pickle.dump(set(), f)
+#
+#
+# def read_db():
+#     with open('captured_text.pkl') as f:
+#         captured_text = pickle.load(f)
+#     return captured_text
+#
+#
+# def save_db(db):
+#     with open('captured_text.pkl', 'wb') as f:
+#         pickle.dump(db, f)
+
+
 def save_text(text):
-    with open('catured_text.txt', 'a') as f:
-        f.write(text.encode('utf8')+'\n')
+    if text not in text_set:
+        text_set.add(text)
+        with open('captured_text.txt', 'a') as f:
+            f.write(text.encode('utf8')+'\n')
+
+    # captured_text = read_db()
+    # captured_text.add(text.encode('utf8'))
+    # save_db(captured_text)
+
+    # with open('captured_text.txt', 'a') as f:
+    #     f.write(text.encode('utf8')+'\n')
 
 
 def check_blacklist_text(text):
@@ -66,7 +98,7 @@ def check_blacklist_user(user):
 
 
 def standardize_text(text):
-    decoded = unidecode(text)
+    decoded = text.decode('utf8')
     unescaped = HTMLParser.HTMLParser().unescape(decoded)
     return unescaped
 

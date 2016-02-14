@@ -1,17 +1,51 @@
 employers = {
-    'hr', 'humanresources', 'recruiting', 'jobangels', 'leadership', 'hrtech', 'hru', 'socialrecruiting', 'hireme'
+    'hr',
+    'humanresources',
+    'recruiting',
+    'jobangels',
+    'leadership',
+    'hrtech',
+    'hru',
+    'socialrecruiting',
 }
 job_seekers = {
-    'careers', 'employment', 'gethired', 'hiring', 'nowhiring', 'jobfairy', 'joblisting',
-    'jobopening', 'jobposting', 'jobs', 'tweetmyjobs', 'job', 'unemployed', 'needajob', 'rtjobs'
+    'careers',
+    'employment',
+    'gethired',
+    'hiring',
+    'hiringcontractors',
+    'nowhiring',
+    'jobfairy',
+    'joblisting',
+    'jobopening',
+    'jobposting',
+    'jobs',
+    'tweetmyjobs',
+    'job',
+    'unemployed',
+    'needajob',
+    'rtjobs',
+    'jobsearch',
+    'hireme'
 }
 job_tips = {
-    'interviewtips', 'jobadvice', 'jobsearch', 'jobsearchtips', 'jobtips', 'jobhunt', 'jobseekers',
+    'interviewtips',
+    'jobadvice',
+    'jobsearchtips',
+    'jobtips',
+    'jobhunt',
+    'jobseekers',
     'opportunity'
 }
 career_tips = {
-    'career', 'careeradvice', 'careerchange', 'cv', 'resume', 'resumes', 'resumeadvice',
-    'resumetips', 'resumewriting'
+    'careeradvice',
+    'careerchange',
+    'cv',
+    'resume',
+    'resumes',
+    'resumeadvice',
+    'resumetips',
+    'resumewriting'
 }
 
 all_hashtags = employers | job_seekers | job_tips | career_tips
