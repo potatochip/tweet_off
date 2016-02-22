@@ -86,7 +86,8 @@ def save_text(text):
 
 
 def check_blacklist_text(text):
-    blacklist = ['thinkbigsundaywithmarsha', '#career #opportunity', '#job #opportunity']
+    blacklist = ['thinkbigsundaywithmarsha']
+    blacklist.extend('#'+i for i in job_seekers)
     if any(i in text.lower() for i in blacklist):
         return True
 

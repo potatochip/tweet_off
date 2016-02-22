@@ -128,7 +128,9 @@ def strip_tags(text):
 
         # unravel hashtags and remove hashmark
         for i in result.tags:
-            unraveled = infer_spaces(i)
+            print i
+            unraveled = infer_spaces(i.lower())
+            print unraveled
             text = text.replace('#'+i, unraveled)
 
         text = text.strip()

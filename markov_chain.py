@@ -42,6 +42,7 @@ def _wordIter(text, separator='.'):
         if sub:
             yield sub
 
+
 class MarkovChain(object):
     def __init__(self, dbFilePath=None):
         self.dbFilePath = dbFilePath
@@ -114,6 +115,76 @@ class MarkovChain(object):
                                                     + seed)
         return self._accumulateWithSeed(words)
 
+    def generateStringWithTopics(self, topics):
+        # random first word, random topic as second word, random third word,
+        # most probable topic for fourth word, continue
+        tpcs = topics[:]
+        # t1 = random.choice(tpcs)
+        # tpcs.remove(t1)
+        # t2 = random.choice(tpcs)
+        topic = random.choice(tpcs)
+        start_word = topic.capitalize()
+        tpcs.remove(topic)
+        if (start_word,) not in self.db:
+            gen_word = self._nextWord([''])
+            if (gen_word, topic) not in self.db:
+                sentence = [gen_word]
+            else:
+                sentence = [gen_word, topic]
+        else:
+            next_word = random.choice(tpcs)
+            if (start_word, next_word) not in self.db:
+                sentence = [start_word]
+            else:
+                sentence = [start_word, next_word]
+                tpcs.remove(next_word)
+        topic_word = None
+        count = 0
+        while not topic_word:
+            count += 1
+            topic_word = self._getMaxProbableWord(sentence, tpcs)
+            if topic_word:
+                sentence.append(topic_word)
+            else:
+                sentence.append(self._nextWord(sentence))
+            if count == 5:
+                topic_word = True
+        # start_word = self._nextWord([''])
+        # max_word = self._getMaxProbableWord(start_word, tpcs)
+        # tpcs.remove(max_word)
+        # sentence = [start_word, max_word]
+        # next_word = self._nextWord(sentence)
+        # sentence.append(next_word)
+        # max_word = self._getMaxProbableWord(sentence, tpcs)
+        # sentence.append(max_word)
+        return self.generateStringWithSeed(' '.join(sentence))
+
+    def _getMaxProbableWord(self, lastwords, words):
+        probmap = self._getProbabilityMap(lastwords)
+        word_probabilities = {}
+        for i in words:
+            non_default_dict_map = dict(probmap) # ha! shits been updating probability to 1.0 for every word it looks up that doesnt exist!
+            if i in non_default_dict_map:
+                word_probabilities.update({i: non_default_dict_map[i]})
+            else:
+                word_probabilities.update({i: 0.0})
+        max_word = max(word_probabilities, key=lambda x: x[1])
+        if word_probabilities[max_word] == 0.0:
+            # return random.choice(words)
+            return None
+        else:
+            return max_word
+
+    def _getProbabilityMap(self, lastwords):
+        lastwords = tuple(lastwords)
+        if lastwords != ('',):
+            while lastwords not in self.db:
+                lastwords = lastwords[1:]
+                if not lastwords:
+                    return ''
+        probmap = self.db[lastwords]
+        return probmap
+
     def _accumulateWithSeed(self, seed):
         """ Accumulate the generated sentence with a given single word as a
         seed """
@@ -125,13 +196,7 @@ class MarkovChain(object):
         return ' '.join(sentence).strip()
 
     def _nextWord(self, lastwords):
-        lastwords = tuple(lastwords)
-        if lastwords != ('',):
-            while lastwords not in self.db:
-                lastwords = lastwords[1:]
-                if not lastwords:
-                    return ''
-        probmap = self.db[lastwords]
+        probmap = self._getProbabilityMap(lastwords)
         sample = random.random()
         # since rounding errors might make us miss out on some words
         maxprob = 0.0

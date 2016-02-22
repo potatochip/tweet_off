@@ -41,7 +41,7 @@ def stem_with_replacement(texts):
 
 
 class Topics(object):
-    def __init__(self, documents, num_topics=None, num_words=None, parts_of_speech=['NN', 'VBG'], chunks=None, stem=False):
+    def __init__(self, documents, num_topics=None, num_words=None, parts_of_speech=['NN', 'VBG'], chunks=None, stem=False, pretrained_model=None):
         '''
         will only return a maximum number of topics equal to the number of documents.
         if a single document then will return a maximum number of topics equal to the number of sentences in that document.
@@ -54,6 +54,7 @@ class Topics(object):
         self.pos = parts_of_speech
         self.chunks = chunks
         self.stem = stem
+        self.pretrained_model = pretrained_model
         self._process_text()
         self._get_topics()
         self._strip_topics()
@@ -94,9 +95,12 @@ class Topics(object):
         tfidf = models.TfidfModel(corpus)
         corpus_tfidf = tfidf[corpus]
 
-        self.lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=self.num_topics)
-        self.topics = self.lsi.show_topics(num_words=self.num_words)
-        self.corpus_lsi = self.lsi[corpus_tfidf]
+        if self.pretrained_model:
+            pass
+        else:
+            self.lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=self.num_topics)
+            self.topics = self.lsi.show_topics(num_words=self.num_words)
+            self.corpus_lsi = self.lsi[corpus_tfidf]
 
     def _strip_topics(self):
         clean_topics = []
@@ -112,6 +116,3 @@ class Topics(object):
         sorted_clusters = sorted(topic_scores, key=lambda x: x[1], reverse=True)
         most_relevant_cluster = sorted_clusters[0]
         return self.topics[most_relevant_cluster[0]]
-
-    def update_model(self, corpus):
-        self.lsi.update()

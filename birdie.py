@@ -13,6 +13,8 @@ from unicode_csv_handler import UnicodeCsvReader
 from markov_chain import MarkovChain
 from hashtags import *
 from twitter_utils import *
+from gildit import get_content_dict
+from topic_modeling import Topics
 
 
 auth = tweepy.OAuthHandler(keys['consumer_key'], keys['consumer_secret'])
@@ -54,6 +56,12 @@ def check_blacklist(sentence):
         return True
 
 
+def get_topics(texts, index):
+    texts = [i['text'] for i in get_content_dict()]
+    t = Topics(texts)
+    return t.topics_for_document(index)
+
+
 def generate_markov_sentence(original_sentence):
     mc = MarkovChain()
     mc.generateDatabase((' '.join(get_text())))
@@ -66,7 +74,18 @@ def generate_markov_sentence(original_sentence):
             seed = ' '.join(stripped.split()[0:2])
             sent = mc.generateStringWithSeed(seed)
         except:
-            sent = mc.generateString()
+            return generate_seedless_markov_sentence()
+    if check_blacklist(sent):
+        return ''
+    else:
+        return sentence_case(sent)
+
+
+def generate_topic_markov_sentence(texts, index):
+    topics = get_topics(texts, index)
+    mc = MarkovChain()
+    mc.generateDatabase((' '.join(get_text())))
+    sent = mc.generateStringWithTopics(topics)
     if check_blacklist(sent):
         return ''
     else:
@@ -121,14 +140,19 @@ def fix_bugs(text):
 
 
 def get_content():
-    with open('content.csv') as csv_file:
-        data = UnicodeCsvReader(csv_file, skipinitialspace=True)
-        full_data = list(data)
-    selected_content = random.choice(full_data)
-    original_sentence = selected_content[0]
-    link = selected_content[1]
+    # with open('content.csv') as csv_file:
+    #     data = UnicodeCsvReader(csv_file, skipinitialspace=True)
+    #     full_data = list(data)
+    # selected_content = random.choice(full_data)
+    # original_sentence = selected_content[0]
+    # link = selected_content[1]
+    content = get_content_dict()
+    index = random.choice(range(len(content)))
+    selected_content = content[index]
+    original_sentence = selected_content['message']
+    link = selected_content['link']
     # choices = ['original'] * 40 + ['markov_seed'] * 30 + ['markov_gen'] * 30
-    choices = ['original', 'markov_seed', 'markov_gen']
+    choices = ['original', 'markov_seed', 'markov_gen', 'markov_topic']
     choice = random.choice(choices)
     if choice == 'original':
         message = fit_length(original_sentence, link)
@@ -146,6 +170,15 @@ def get_content():
             print 'too short'
             print markov
             markov = generate_seedless_markov_sentence()
+            markov = fix_bugs(markov)
+        message = fit_length(markov, link)
+    elif choice == 'markov_topic':
+        markov = ''
+        while len(markov.split()) < 2:
+            print 'too short'
+            print markov
+            texts = [i['text'] for i in content]
+            markov = generate_topic_markov_sentence(texts, index)
             markov = fix_bugs(markov)
         message = fit_length(markov, link)
     return message

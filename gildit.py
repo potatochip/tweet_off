@@ -5,6 +5,12 @@ import requests
 import datetime
 
 
+def get_content_dict():
+    with open('content.pkl') as f:
+        content = pickle.load(f)
+    return content.values()
+
+
 def get_content(url):
     r = requests.get(url, headers={'User-Agent': 'a user agent'})
     soup = BeautifulSoup(r.content, 'html.parser')
