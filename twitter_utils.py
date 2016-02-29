@@ -45,6 +45,8 @@ def infer_spaces(s):
 
 def strip_tags(text):
     try:
+        abbreviations = [i for i in text.split() if i.isupper() and len(i) > 1]
+
         text = text.replace('\n', ' ')
 
         # get rid of period sometimes placed before @username in the beginning
@@ -67,6 +69,8 @@ def strip_tags(text):
                 last_word_rt = False
         text = ' '.join(new_tokens)
 
+        slop = ['via', 'on', 'with', 'at', '@', 'in', '-', 'for', '~', 'by', '=>', '/w', '\\w', 'like', 'from']
+
         # remove junk at the end that is just a stream of hashtags and @'s'
         tokens = text.lower().split()
         more_slop = True
@@ -79,7 +83,7 @@ def strip_tags(text):
             elif first_char_last_token in '.#@~-([' and last_char_last_token not in '.!?':
                 tokens.pop()
                 text = ' '.join(tokens)
-            elif tokens[-1] in ['via', 'on', 'with', 'at', '@', 'in', '-']:
+            elif tokens[-1] in slop:
                 tokens.pop()
                 text = ' '.join(tokens)
             else:
@@ -88,7 +92,8 @@ def strip_tags(text):
         result = p.parse(text)
 
         for i in result.users:
-            text = text.replace('@'+i, i.capitalize())
+            # text = text.replace('@'+i, i.capitalize())
+            text = text.replae('@'+i, '')
 
         # remove links
         for i in result.urls:
@@ -100,17 +105,17 @@ def strip_tags(text):
         # remove last word if now it is via after stripping an @-name
         tokens = text.split()
         last_word = tokens[-1]
-        slop = ['via', 'on', 'with', 'at', '@', 'in', '-']
         if last_word in slop or len(last_word) < 2:
             tokens.pop()
             text = ' '.join(tokens)
 
-        # remove junk at front of tweet
+        # remove junk at front of tweete
         tokens = text.split()
         more_slop = True
         while more_slop:
             first_char_first_token = tokens[0][0]
-            if first_char_first_token in ['#', '@']:
+            # if first_char_first_token in ['#', '@']:
+            if first_char_first_token in ['@']:
                 tokens.pop(0)
                 text = ' '.join(tokens)
             else:
@@ -128,15 +133,37 @@ def strip_tags(text):
 
         # unravel hashtags and remove hashmark
         for i in result.tags:
-            print i
             unraveled = infer_spaces(i.lower())
-            print unraveled
-            text = text.replace('#'+i, unraveled)
+            if '#'+i.upper() in abbreviations:
+                text = text.replace('#'+i, unraveled.upper())
+            else:
+                text = text.replace('#'+i, unraveled)
 
+        # correct abbreviations
+        correct_abrevs = [(lambda x: x.upper() if x.upper() in abbreviations else x)(i) for i in text.split()]
+        text = ' '.join(correct_abrevs)
+        # get rid of shit that sometimes gets left behind
         text = text.strip()
 
-        # remove quotes
-        text = text.replace('\"', '').replace('\'', '')
+        if text[0] == '.':
+            text = text[1:]
+
+        if text[-3:] == '...':
+            text = text[:-3]
+
+        new_text = []
+        quotes = ['\"', '\'']
+        for i in text.split():
+            if i[0] in quotes and i[-1] in quotes:
+                new_text.append(i[1:-1])
+            if i[0] in quotes:
+                new_text.append(i[1:])
+            elif i[-1]  in quotes:
+                new_text.append(i[:-1])
+            else:
+                new_text.append(i)
+        text = ' '.join(new_text)
+        # text = text.replace('\"', '').replace('\'', '')
 
         if text[-1] in ':-|,':
             text = text[:-1]

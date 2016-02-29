@@ -24,11 +24,9 @@ max_length = 140
 
 
 def get_text():
-    data = set()
     with open('captured_text.txt') as f:
-        for row in f.readlines():
-            data.add(row)
-    return data
+        data = f.readlines():
+    return set(data)
 
 
 def tweet_out(tweet):
@@ -63,7 +61,7 @@ def get_topics(texts, index):
 
 
 def generate_markov_sentence(original_sentence):
-    mc = MarkovChain()
+    mc = MarkovChain(verbose=False)
     mc.generateDatabase((' '.join(get_text())))
     stripped = strip_tags(original_sentence)
     try:
@@ -83,7 +81,7 @@ def generate_markov_sentence(original_sentence):
 
 def generate_topic_markov_sentence(texts, index):
     topics = get_topics(texts, index)
-    mc = MarkovChain()
+    mc = MarkovChain(verbose=False)
     mc.generateDatabase((' '.join(get_text())))
     sent = mc.generateStringWithTopics(topics)
     if check_blacklist(sent):
@@ -93,7 +91,7 @@ def generate_topic_markov_sentence(texts, index):
 
 
 def generate_seedless_markov_sentence():
-    mc = MarkovChain()
+    mc = MarkovChain(verbose=False)
     mc.generateDatabase((' '.join(get_text())))
     sent = mc.generateString()
     if check_blacklist(sent):
@@ -158,30 +156,32 @@ def get_content():
         message = fit_length(original_sentence, link)
     elif choice == 'markov_seed':
         markov = ''
-        while len(markov.split()) < 2:
-            print 'too short'
-            print markov
+        while too_short(markov):
             markov = generate_markov_sentence(original_sentence)
             markov = fix_bugs(markov)
         message = fit_length(markov, link)
     elif choice == 'markov_gen':
         markov = ''
-        while len(markov.split()) < 2:
-            print 'too short'
-            print markov
+        while too_short(markov):
             markov = generate_seedless_markov_sentence()
             markov = fix_bugs(markov)
         message = fit_length(markov, link)
     elif choice == 'markov_topic':
         markov = ''
-        while len(markov.split()) < 2:
-            print 'too short'
-            print markov
+        while too_short(markov):
             texts = [i['text'] for i in content]
             markov = generate_topic_markov_sentence(texts, index)
             markov = fix_bugs(markov)
         message = fit_length(markov, link)
     return message
+
+
+def too_short(s):
+    if s == '':
+        return True
+    if len(s.split()) < 2:
+        print('too short: {}'.format(s))
+        return True
 
 
 def main():

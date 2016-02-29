@@ -8,6 +8,8 @@ employers = {
     'hrtech',
     'hru',
     'socialrecruiting',
+    'sourcing',
+    'recruitingtrends'
 }
 job_seekers = {
     'careers',
@@ -36,7 +38,6 @@ job_tips = {
     'jobtips',
     'jobhunt',
     'jobseekers',
-    'opportunity'
 }
 career_tips = {
     'careeradvice',

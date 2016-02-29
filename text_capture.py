@@ -86,7 +86,9 @@ def save_text(text):
 
 
 def check_blacklist_text(text):
-    blacklist = ['thinkbigsundaywithmarsha']
+    blacklist = ['thinkbigsundaywithmarsha', '#career opportunity', '#career #opportunity',
+                 '#careeropportunity', '#job opportunity', '#job #opportunity',
+                 '#jobopportunity']
     blacklist.extend('#'+i for i in job_seekers)
     if any(i in text.lower() for i in blacklist):
         return True
@@ -105,9 +107,13 @@ def standardize_text(text):
 
 
 def main():
-    l = StreamListener()
-    stream = tweepy.Stream(auth, l)
-    stream.filter(track=['#'+i for i in text_capture_hashtags])
+    while True:
+        try:
+            l = StreamListener()
+            stream = tweepy.Stream(auth, l)
+            stream.filter(track=['#'+i for i in text_capture_hashtags])
+        except:
+            pass
 
 
 if __name__ == '__main__':

@@ -44,15 +44,17 @@ def _wordIter(text, separator='.'):
 
 
 class MarkovChain(object):
-    def __init__(self, dbFilePath=None):
+    def __init__(self, dbFilePath=None, verbose=True):
         self.dbFilePath = dbFilePath
+        self.verbose = verbose
         if not dbFilePath:
             self.dbFilePath = os.path.join(os.path.dirname(__file__), "markovdb")
         try:
             with open(self.dbFilePath, 'rb') as dbfile:
                 self.db = pickle.load(dbfile)
         except (IOError, ValueError):
-            logging.warn('Database file corrupt or not found, using empty database')
+            if verbose:
+                logging.warn('Database file corrupt or not found, using empty database')
             self.db = _db_factory()
 
     def generateDatabase(self, textSample, sentenceSep='[.!?\n]', n=2):
