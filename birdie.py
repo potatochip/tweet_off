@@ -1,9 +1,7 @@
 '''
 winning
 '''
-#TODO: move data into pickled set? more efficient and faster but then cant just edit in a text browser
-#TODO: allow updating of content.csv files from browser. flask-admin app?
-#TODO: add post to website and link to twitter page
+
 
 from keys import keys
 import tweepy
@@ -25,12 +23,11 @@ max_length = 140
 
 def get_text():
     with open('captured_text.txt') as f:
-        data = f.readlines():
+        data = f.readlines()
     return set(data)
 
 
 def tweet_out(tweet):
-    print tweet
     api = tweepy.API(auth)
     api.update_status(status=tweet)
 
@@ -165,7 +162,8 @@ def get_content():
         while too_short(markov):
             markov = generate_seedless_markov_sentence()
             markov = fix_bugs(markov)
-        message = fit_length(markov, link)
+        # message = fit_length(markov, link)
+        message = markov
     elif choice == 'markov_topic':
         markov = ''
         while too_short(markov):
@@ -173,6 +171,7 @@ def get_content():
             markov = generate_topic_markov_sentence(texts, index)
             markov = fix_bugs(markov)
         message = fit_length(markov, link)
+    print('{}: {}'.format(choice, message))
     return message
 
 
