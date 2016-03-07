@@ -136,8 +136,9 @@ def fix_bugs(text, insert_period=True):
             dirty = False
             status = False
     if insert_period:
-        if text[-1] not in '.?!':
-            text = text + '.'
+        if text:
+            if text[-1] not in '.?!':
+                text = text + '.'
     text = ' '.join(text.split())
     return text, status
 
@@ -155,7 +156,8 @@ def get_content():
     original_sentence = selected_content['message']
     link = selected_content['link']
     # choices = ['original'] * 40 + ['markov_seed'] * 30 + ['markov_gen'] * 30
-    choices = ['original', 'markov_seed', 'markov_gen', 'markov_topic']
+    # choices = ['original', 'markov_seed', 'markov_gen', 'markov_topic']
+    choices = ['original', 'markov_seed', 'markov_gen']
     choice = random.choice(choices)
     if choice == 'original':
         message = fit_length(original_sentence, link)
