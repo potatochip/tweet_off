@@ -69,7 +69,7 @@ def strip_tags(text):
                 last_word_rt = False
         text = ' '.join(new_tokens)
 
-        slop = ['via', 'on', 'with', 'at', '@', 'in', '-', 'for', '~', 'by', '=>', '/w', '\\w', 'like', 'from']
+        slop = ['via', 'on', 'with', 'at', '@', 'in', '-', 'for', '~', 'by', '=>', '/w', '\\w', 'like', 'from', 'of']
 
         # remove junk at the end that is just a stream of hashtags and @'s'
         tokens = text.lower().split()

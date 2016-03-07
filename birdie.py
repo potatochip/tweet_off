@@ -34,7 +34,7 @@ def tweet_out(tweet):
 
 def hashtag_randomizer():
     hashtag_mark = '#'
-    selected_hashtag = random.choice(list(employers))
+    selected_hashtag = random.choice(list(all_hashtags))
     return hashtag_mark + selected_hashtag
 
 
@@ -122,16 +122,24 @@ def fit_length(msg, link):
             return message
 
 
-def fix_bugs(text):
+def fix_bugs(text, insert_period=True):
     text = text.replace('\"', '').replace('\'', '')
-    if text[-1] in ':-|,':
-        text = text[:-1]
-    if text[-1] in ['=>', ' -', '->']:
-        text = text[:-2] + '.'
-    if text[-1] not in '.?!':
-        text = text + '.'
+    dirty = True
+    status = True
+    while dirty:
+        if text:
+            if text[-1] in ':-|,=>':
+                text = text[:-1].strip()
+            else:
+                dirty = False
+        else:
+            dirty = False
+            status = False
+    if insert_period:
+        if text[-1] not in '.?!':
+            text = text + '.'
     text = ' '.join(text.split())
-    return text
+    return text, status
 
 
 def get_content():
@@ -152,31 +160,40 @@ def get_content():
     if choice == 'original':
         message = fit_length(original_sentence, link)
     elif choice == 'markov_seed':
-        markov = ''
-        while too_short(markov):
+        bad_tweet = True
+        while bad_tweet:
             markov = generate_markov_sentence(original_sentence)
-            markov = fix_bugs(markov)
+            cleaned, status = fix_bugs(markov, insert_period=False)
+            bad_tweet = True if not status else False
+            if not bad_tweet:
+                bad_tweet = True if too_short(cleaned) else False
         message = fit_length(markov, link)
     elif choice == 'markov_gen':
-        markov = ''
-        while too_short(markov):
+        bad_tweet = True
+        while bad_tweet:
             markov = generate_seedless_markov_sentence()
-            markov = fix_bugs(markov)
+            cleaned, status = fix_bugs(markov, insert_period=False)
+            bad_tweet = True if not status else False
+            if not bad_tweet:
+                bad_tweet = True if too_short(cleaned) else False
         # message = fit_length(markov, link)
         message = markov
     elif choice == 'markov_topic':
-        markov = ''
-        while too_short(markov):
+        bad_tweet = True
+        while bad_tweet:
             texts = [i['text'] for i in content]
             markov = generate_topic_markov_sentence(texts, index)
-            markov = fix_bugs(markov)
+            cleaned, status = fix_bugs(markov, insert_period=False)
+            bad_tweet = True if not status else False
+            if not bad_tweet:
+                bad_tweet = True if too_short(cleaned) else False
         message = fit_length(markov, link)
     print('{}: {}'.format(choice, message))
     return message
 
 
 def too_short(s):
-    if s == '':
+    if not s:
         return True
     if len(s.split()) < 2:
         print('too short: {}'.format(s))
@@ -190,7 +207,8 @@ def main():
             tweet_out(msg)
             sleep(random.randint(3600, 7200))
         except Exception as e:
-            print e
+            tweet_out("hey boss, we have an error. i'm too lazy to be more discrete. can you check the logs?")
+            print('error: {}'.format(e))
 
 
 if __name__ == '__main__':
