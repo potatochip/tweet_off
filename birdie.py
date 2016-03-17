@@ -106,7 +106,10 @@ def get_hashtags(count):
 
 
 def fit_length(msg, link):
-    content_end = get_hashtags(1) + 'via ' + link
+    def hashtag_and_link(num_hashtags, link):
+        return get_hashtags(num_hashtags) + 'via ' + link
+
+    content_end = hashtag_and_link(1) if link else get_hashtags(1)
     message = msg + content_end
     msg_length = len(message) - len(link) + 23
     if msg_length > max_length:
@@ -114,7 +117,7 @@ def fit_length(msg, link):
         message = msg[:-overrun-3].strip() + '...' + content_end
         return message
     else:
-        new_message = msg + get_hashtags(2) + 'via ' + link
+        new_message = msg + hashtag_and_link(2) if link else get_hashtags(2)
         new_msg_length = len(new_message) - len(link) + 23
         if new_msg_length < max_length:
             return new_message
@@ -156,8 +159,8 @@ def get_content():
     original_sentence = selected_content['message']
     link = selected_content['link']
     # choices = ['original'] * 40 + ['markov_seed'] * 30 + ['markov_gen'] * 30
-    # choices = ['original', 'markov_seed', 'markov_gen', 'markov_topic']
-    choices = ['original', 'markov_seed', 'markov_gen']
+    choices = ['original', 'markov_seed', 'markov_gen', 'markov_topic']
+    # choices = ['original', 'markov_seed', 'markov_gen']
     choice = random.choice(choices)
     if choice == 'original':
         message = fit_length(original_sentence, link)
@@ -178,8 +181,8 @@ def get_content():
             bad_tweet = True if not status else False
             if not bad_tweet:
                 bad_tweet = True if too_short(cleaned) else False
-        # message = fit_length(markov, link)
-        message = markov
+        message = fit_length(markov, None)  # no link when completely random text
+        # message = markov
     elif choice == 'markov_topic':
         bad_tweet = True
         while bad_tweet:
@@ -209,8 +212,12 @@ def main():
             tweet_out(msg)
             sleep(random.randint(3600, 7200))
         except Exception as e:
-            tweet_out("hey boss, we have an error. i'm too lazy to be more discrete. can you check the logs?")
             print('error: {}'.format(e))
+            # try:
+            #     tweet_out("hey boss, we have an error. i'm too lazy to be more discrete. can you check the logs?")
+            #     print('error: {}'.format(e))
+            # except:
+            #     pass
 
 
 if __name__ == '__main__':
