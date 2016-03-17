@@ -109,7 +109,7 @@ def fit_length(msg, link):
     def hashtag_and_link(num_hashtags, link):
         return get_hashtags(num_hashtags) + 'via ' + link
 
-    content_end = hashtag_and_link(1) if link else get_hashtags(1)
+    content_end = hashtag_and_link(1, link) if link else get_hashtags(1)
     message = msg + content_end
     msg_length = len(message) - len(link) + 23
     if msg_length > max_length:
@@ -117,7 +117,7 @@ def fit_length(msg, link):
         message = msg[:-overrun-3].strip() + '...' + content_end
         return message
     else:
-        new_message = msg + hashtag_and_link(2) if link else get_hashtags(2)
+        new_message = msg + hashtag_and_link(2, link) if link else get_hashtags(2)
         new_msg_length = len(new_message) - len(link) + 23
         if new_msg_length < max_length:
             return new_message
