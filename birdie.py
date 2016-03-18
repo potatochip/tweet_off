@@ -117,7 +117,7 @@ def fit_length(msg, link):
         message = msg[:-overrun-3].strip() + '...' + content_end
         return message
     else:
-        new_message = msg + hashtag_and_link(2, link) if link else get_hashtags(2)
+        new_message = msg + hashtag_and_link(2, link) if link else msg + get_hashtags(2)
         new_msg_length = len(new_message) - len(link) + 23
         if new_msg_length < max_length:
             return new_message
@@ -181,7 +181,7 @@ def get_content():
             bad_tweet = True if not status else False
             if not bad_tweet:
                 bad_tweet = True if too_short(cleaned) else False
-        message = fit_length(markov, None)  # no link when completely random text
+        message = fit_length(markov, "")  # no link when completely random text
         # message = markov
     elif choice == 'markov_topic':
         bad_tweet = True
@@ -193,15 +193,15 @@ def get_content():
             if not bad_tweet:
                 bad_tweet = True if too_short(cleaned) else False
         message = fit_length(markov, link)
-    print('{}: {}'.format(choice, message))
+    print('{}: {}'.format(choice, message.encode('utf8')))
     return message
 
 
 def too_short(s):
     if not s:
         return True
-    if len(s.split()) < 2:
-        print('too short: {}'.format(s))
+    if len(s.split()) < 3:
+        print('too short: {}'.format(s.encode('utf8')))
         return True
 
 
