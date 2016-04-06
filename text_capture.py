@@ -40,15 +40,18 @@ class StreamListener(tweepy.streaming.StreamListener):
                 return
             if check_blacklist_text(tweet) or check_blacklist_user(user):
                 return
-            text = strip_tags(tweet)
-            if text:
-                if len(text.split()) < 5:
-                    return
-                # print(user)
-                print(tweet)
-                print(text)
-                save_text(text)
-                print('\n')
+            print(tweet)
+            save_text(tweet)
+            print('\n')
+            # text = strip_tags(tweet)
+            # if text:
+            #     if len(text.split()) < 5:
+            #         return
+            #     # print(user)
+            #     print(tweet)
+            #     print(text)
+            #     save_text(text)
+            #     print('\n')
         except:
             pass
             # with open('error_log.txt', 'a') as file:
@@ -112,8 +115,8 @@ def main():
             l = StreamListener()
             stream = tweepy.Stream(auth, l)
             stream.filter(track=['#'+i for i in text_capture_hashtags])
-        except:
-            pass
+        except Exception as e:
+            print e
 
 
 if __name__ == '__main__':

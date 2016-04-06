@@ -52,7 +52,7 @@ def check_blacklist(sentence):
 
 
 def get_topics(texts, index):
-    texts = [i['text'] for i in get_content_dict()]
+    # texts = [i['text'] for i in get_content_dict()]
     t = Topics(texts)
     return t.topics_for_document(index)
 
@@ -210,7 +210,7 @@ def main():
         try:
             msg = get_content()
             tweet_out(msg)
-            sleep(random.randint(3600, 7200))
+            sleep(random.randint(1800, 5400))
         except Exception as e:
             print('error: {}'.format(e))
             # try:
