@@ -52,26 +52,10 @@ class StreamListener(tweepy.streaming.StreamListener):
             #     print(text)
             #     save_text(text)
             #     print('\n')
-        except:
-            pass
+        except Exception as e:
+            print(e)
             # with open('error_log.txt', 'a') as file:
             #     file.write(data)
-
-
-# def initialize_pickle():
-#     with open('captured_text.pkl', 'wb') as f:
-#         pickle.dump(set(), f)
-#
-#
-# def read_db():
-#     with open('captured_text.pkl') as f:
-#         captured_text = pickle.load(f)
-#     return captured_text
-#
-#
-# def save_db(db):
-#     with open('captured_text.pkl', 'wb') as f:
-#         pickle.dump(db, f)
 
 
 def save_text(text):
@@ -79,14 +63,6 @@ def save_text(text):
         text_set.add(text)
         with open('captured_text.txt', 'a') as f:
             f.write(text.encode('utf8')+'\n')
-
-    # captured_text = read_db()
-    # captured_text.add(text.encode('utf8'))
-    # save_db(captured_text)
-
-    # with open('captured_text.txt', 'a') as f:
-    #     f.write(text.encode('utf8')+'\n')
-
 
 def check_blacklist_text(text):
     blacklist = ['thinkbigsundaywithmarsha', '#career opportunity', '#career #opportunity',
