@@ -46,7 +46,6 @@ def infer_spaces(s):
 def strip_tags(text):
     try:
         abbreviations = [i for i in text.split() if i.isupper() and len(i) > 1]
-
         text = text.replace('\n', ' ')
 
         # get rid of period sometimes placed before @username in the beginning
@@ -93,7 +92,7 @@ def strip_tags(text):
 
         for i in result.users:
             # text = text.replace('@'+i, i.capitalize())
-            text = text.replae('@'+i, '')
+            text = text.replace('@'+i, '')
 
         # remove links
         for i in result.urls:
@@ -109,7 +108,7 @@ def strip_tags(text):
             tokens.pop()
             text = ' '.join(tokens)
 
-        # remove junk at front of tweete
+        # remove junk at front of tweet
         tokens = text.split()
         more_slop = True
         while more_slop:
@@ -145,12 +144,6 @@ def strip_tags(text):
         # get rid of shit that sometimes gets left behind
         text = text.strip()
 
-        if text[0] == '.':
-            text = text[1:]
-
-        if text[-3:] == '...':
-            text = text[:-3]
-
         new_text = []
         quotes = ['\"', '\'']
         for i in text.split():
@@ -174,5 +167,6 @@ def strip_tags(text):
 
         return sentence_case(' '.join(text.split()))
 
-    except:
+    except Exception as e:
+        print('strip tags: {}'.format(e))
         return None
