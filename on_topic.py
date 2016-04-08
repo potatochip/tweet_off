@@ -1,8 +1,3 @@
-'''
-ngrams bumped to four or five-grams
-first ngram is the technical noun topic of the tweet
-
-'''
 import re
 from ttp import ttp
 from collections import defaultdict
@@ -76,6 +71,11 @@ class PrepareText(object):
 
 
 class MarkovOnTopic(object):
+    '''
+    TODO: ngrams bumped to four or five-grams
+    TODO: first ngram is the technical noun topic of the tweet
+    TODO: stem the topics to narrow them. or even better find a way to standardize synonyms to the same word and then stem
+    '''
     def generate_db(self, docs, filename=None):
         self.docs = docs
         pass
