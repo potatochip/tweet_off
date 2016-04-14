@@ -9,7 +9,8 @@ employers = {
     'hru',
     'socialrecruiting',
     'sourcing',
-    'recruitingtrends'
+    'recruitingtrends',
+    'recruitingprocess'
 }
 job_seekers = {
     'careers',

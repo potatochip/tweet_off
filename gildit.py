@@ -13,7 +13,7 @@ def get_content_dict():
 def get_content(url):
     r = requests.get(url, headers={'User-Agent': 'a user agent'})
     soup = BeautifulSoup(r.content, 'html.parser')
-    title = soup.find('h1', {'class': 'hero-title'}).get_text(' ', strip=True)
+    title = soup.find('h1', {'class': 'the-title'}).get_text(' ', strip=True)
     text = ''
     for p in soup.find("div", { "class" : "rte" }).find_all('p'):
         text += ' ' + p.get_text(' ', strip=True)
