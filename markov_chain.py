@@ -57,7 +57,7 @@ class MarkovChain(object):
                 logging.warn('Database file corrupt or not found, using empty database')
             self.db = _db_factory()
 
-    def generateDatabase(self, textSample, sentenceSep='[.!?\n]', n=2):
+    def generateDatabase(self, textSample, sentenceSep='[.!?\n]', n=2, make_lowercase=True):
         """ Generate word probability database from raw content string """
         # I'm using the database to temporarily store word counts
         textSample = _wordIter(textSample, sentenceSep)  # get an iterator for the 'sentences'
@@ -65,6 +65,8 @@ class MarkovChain(object):
         # of a sentence
         self.db[('',)][''] = 0.0
         for line in textSample:
+            if make_lowercase:
+                line = line.lower()
             words = line.strip().split()  # split words in line
             if len(words) == 0:
                 continue
