@@ -146,6 +146,14 @@ class MarkovOnTopic(object):
     TODO: first ngram is the technical noun topic of the tweet
     TODO: stem the topics to narrow them. or even better find a way to standardize synonyms to the same word and then stem
     '''
+    # correct sentence case
+    # db key has no hashmarks but the values do
+    # db key in lowercase, but values are original
+    # on output, count the number of <link>, generate that number of unique links to put in
+    # on output, skip if just consists of <link>
+    # on output, count the number of hashtags, if less than a certain number then append additional to the end
+    # on output, skip if more hashtags than words
+    # on output, skip if more links than words
     def __init__(self, db_path='markov.db'):
         try:
             self.mc = MarkovChain(db_path, verbose=False)
