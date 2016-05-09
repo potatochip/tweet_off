@@ -1,8 +1,6 @@
 '''
 winning
 '''
-
-
 from keys import keys
 import tweepy
 from time import sleep
@@ -13,6 +11,7 @@ from hashtags import *
 from twitter_utils import *
 from gildit import get_content_dict
 from topic_modeling import Topics
+from on_topic import MarkovTweet
 
 
 auth = tweepy.OAuthHandler(keys['consumer_key'], keys['consumer_secret'])
@@ -204,11 +203,24 @@ def too_short(s):
         print('too short: {}'.format(s.encode('utf8')))
         return True
 
+def get_string(string_generator):
+    choice = random.choice(['original', 'seeded', 'seedless'])
+    if choice == 'original':
+        # get original
+    if choice == 'seeded':
+        # strip first three words and use to seed gen
+    if choice == 'seedless':
+        return string_generator.generate_string()
+
 
 def main():
+    tw = on_topic.MarkovTweet()
+    # tw.generate_database()
+    tw.initialize_database()
     while True:
         try:
-            msg = get_content()
+            # msg = get_content()
+            msg = get_string(tw)
             tweet_out(msg)
             sleep(random.randint(1800, 5400))
         except Exception as e:

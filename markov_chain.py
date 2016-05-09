@@ -9,6 +9,8 @@ import os
 import random
 import re
 from collections import defaultdict
+from progressbar import ProgressBar
+
 
 class StringContinuationImpossibleError(Exception):
     pass
@@ -64,7 +66,8 @@ class MarkovChain(object):
         # We're using '' as special symbol for the beginning
         # of a sentence
         self.db[('',)][''] = 0.0
-        for line in textSample:
+        pbar = ProgressBar()
+        for line in pbar(textSample):
             if make_lowercase:
                 line = line.lower()
             words = line.strip().split()  # split words in line
@@ -85,7 +88,8 @@ class MarkovChain(object):
 
         # We've now got the db filled with parametrized word counts
         # We still need to normalize this to represent probabilities
-        for word in self.db:
+        pbar = ProgressBar()
+        for word in pbar(self.db):
             wordsum = 0
             for nextword in self.db[word]:
                 wordsum += self.db[word][nextword]
